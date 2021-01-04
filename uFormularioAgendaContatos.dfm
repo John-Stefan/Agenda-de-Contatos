@@ -129,7 +129,7 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 0
     end
-    object DBEdit1: TDBEdit
+    object txtNome: TDBEdit
       Left = 19
       Top = 38
       Width = 397
@@ -146,10 +146,10 @@ object Form1: TForm1
       ParentFont = False
       TabOrder = 1
     end
-    object DBEdit2: TDBEdit
+    object txtCelular: TDBEdit
       Left = 19
       Top = 94
-      Width = 230
+      Width = 226
       Height = 21
       BorderStyle = bsNone
       Color = 4210752
@@ -160,6 +160,7 @@ object Form1: TForm1
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
+      MaxLength = 15
       ParentFont = False
       TabOrder = 2
     end
@@ -220,19 +221,26 @@ object Form1: TForm1
       TabOrder = 0
       OnChange = txtBuscaChange
     end
-    object DBGrid1: TDBGrid
+    object gdContatos: TDBGrid
       Left = 16
       Top = 75
       Width = 409
       Height = 334
       DataSource = DM.dsContatos
       DrawingStyle = gdsGradient
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
-      TitleFont.Color = clWindowText
+      TitleFont.Color = clBackground
       TitleFont.Height = -11
       TitleFont.Name = 'Tahoma'
       TitleFont.Style = []
+      OnDrawColumnCell = gdContatosDrawColumnCell
       Columns = <
         item
           Expanded = False

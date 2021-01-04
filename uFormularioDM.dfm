@@ -16,6 +16,8 @@ object DM: TDM
   object tbContatos: TFDTable
     Active = True
     AfterInsert = tbContatosAfterInsert
+    BeforePost = tbContatosBeforePost
+    AfterPost = tbContatosAfterPost
     IndexFieldNames = 'id'
     Connection = Conexao
     UpdateOptions.UpdateTableName = 'agenda.contatos'
@@ -25,6 +27,7 @@ object DM: TDM
     object tbContatosid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
+      ReadOnly = True
     end
     object tbContatosnome: TStringField
       FieldName = 'nome'
@@ -36,6 +39,7 @@ object DM: TDM
       FieldName = 'celular'
       Origin = 'celular'
       Required = True
+      EditMask = '(99) 99999-9999;1;_'
       Size = 16
     end
     object tbContatosobservacoes: TMemoField

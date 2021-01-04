@@ -11,9 +11,9 @@ type
   TForm1 = class(TForm)
     Label1: TLabel;
     Label2: TLabel;
-    DBEdit1: TDBEdit;
+    txtNome: TDBEdit;
     Label3: TLabel;
-    DBEdit2: TDBEdit;
+    txtCelular: TDBEdit;
     DBCheckBox1: TDBCheckBox;
     Label4: TLabel;
     DBMemo1: TDBMemo;
@@ -25,8 +25,10 @@ type
     Label6: TLabel;
     Label7: TLabel;
     txtBusca: TEdit;
-    DBGrid1: TDBGrid;
+    gdContatos: TDBGrid;
     procedure txtBuscaChange(Sender: TObject);
+    procedure gdContatosDrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
   private
     { Private declarations }
   public
@@ -41,6 +43,19 @@ implementation
 {$R *.dfm}
 
 uses uFormularioDM;
+
+procedure TForm1.gdContatosDrawColumnCell(Sender: TObject; const Rect: TRect;
+  DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  If DM.tbContatos.FieldByName('bloqueado').AsBoolean  Then
+  Begin
+    gdContatos.Canvas.Brush.Color := $000000CA;
+    gdContatos.Canvas.Font.Color := clWhite;
+  End;
+
+  gdContatos.Canvas.FillRect(Rect);
+  gdContatos.DefaultDrawDataCell(Rect, column.field, state);
+end;
 
 procedure TForm1.txtBuscaChange(Sender: TObject);
 begin
