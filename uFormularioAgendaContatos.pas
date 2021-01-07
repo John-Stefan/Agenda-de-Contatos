@@ -26,6 +26,8 @@ type
     Label7: TLabel;
     txtBusca: TEdit;
     gdContatos: TDBGrid;
+    Label8: TLabel;
+    DBEdit1: TDBEdit;
     procedure txtBuscaChange(Sender: TObject);
     procedure gdContatosDrawColumnCell(Sender: TObject; const Rect: TRect;
       DataCol: Integer; Column: TColumn; State: TGridDrawState);

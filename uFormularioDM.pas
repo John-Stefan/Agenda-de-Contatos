@@ -21,6 +21,8 @@ type
     tbContatosobservacoes: TMemoField;
     tbContatosbloqueado: TBooleanField;
     tbContatosdata: TDateTimeField;
+    tbContatosemail: TStringField;
+    FDQuery1: TFDQuery;
     procedure tbContatosAfterInsert(DataSet: TDataSet);
     procedure tbContatosBeforePost(DataSet: TDataSet);
     procedure tbContatosAfterPost(DataSet: TDataSet);

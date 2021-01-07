@@ -1,7 +1,7 @@
 object DM: TDM
   OldCreateOrder = False
-  Height = 129
-  Width = 368
+  Height = 243
+  Width = 503
   object Conexao: TFDConnection
     Params.Strings = (
       'Database=agenda'
@@ -27,7 +27,6 @@ object DM: TDM
     object tbContatosid: TFDAutoIncField
       FieldName = 'id'
       Origin = 'id'
-      ReadOnly = True
     end
     object tbContatosnome: TStringField
       FieldName = 'nome'
@@ -39,7 +38,6 @@ object DM: TDM
       FieldName = 'celular'
       Origin = 'celular'
       Required = True
-      EditMask = '(99) 99999-9999;1;_'
       Size = 16
     end
     object tbContatosobservacoes: TMemoField
@@ -58,10 +56,23 @@ object DM: TDM
       FieldName = 'data'
       Origin = 'data'
     end
+    object tbContatosemail: TStringField
+      FieldName = 'email'
+      Origin = 'email'
+      Required = True
+      Size = 50
+    end
   end
   object dsContatos: TDataSource
     DataSet = tbContatos
     Left = 248
     Top = 40
+  end
+  object FDQuery1: TFDQuery
+    Connection = Conexao
+    SQL.Strings = (
+      'select email from contatos')
+    Left = 160
+    Top = 136
   end
 end

@@ -2,7 +2,7 @@ object Form1: TForm1
   Left = 0
   Top = 0
   Caption = 'Agenda de Contatos'
-  ClientHeight = 567
+  ClientHeight = 614
   ClientWidth = 951
   Color = 1710618
   TransparentColor = True
@@ -35,7 +35,7 @@ object Form1: TForm1
     Left = 24
     Top = 119
     Width = 440
-    Height = 426
+    Height = 466
     Color = 1513239
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clHighlightText
@@ -47,7 +47,7 @@ object Form1: TForm1
     TabOrder = 0
     object DBText1: TDBText
       Left = 19
-      Top = 368
+      Top = 432
       Width = 271
       Height = 17
       DataField = 'data'
@@ -68,7 +68,7 @@ object Form1: TForm1
     end
     object Label3: TLabel
       Left = 19
-      Top = 75
+      Top = 134
       Width = 33
       Height = 13
       Caption = 'Celular'
@@ -81,7 +81,7 @@ object Form1: TForm1
     end
     object Label4: TLabel
       Left = 19
-      Top = 179
+      Top = 243
       Width = 63
       Height = 13
       Caption = 'Observa'#231#245'es'
@@ -94,7 +94,7 @@ object Form1: TForm1
     end
     object Label5: TLabel
       Left = 19
-      Top = 349
+      Top = 413
       Width = 120
       Height = 13
       Caption = 'Data e Hora do Cadastro'
@@ -107,14 +107,27 @@ object Form1: TForm1
     end
     object Label6: TLabel
       Left = 38
-      Top = 140
+      Top = 204
       Width = 50
       Height = 13
       Caption = 'Bloqueado'
     end
+    object Label8: TLabel
+      Left = 19
+      Top = 76
+      Width = 28
+      Height = 13
+      Caption = 'E-Mail'
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clHighlightText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+    end
     object DBCheckBox1: TDBCheckBox
       Left = 19
-      Top = 139
+      Top = 203
       Width = 15
       Height = 17
       Color = clBackground
@@ -148,7 +161,7 @@ object Form1: TForm1
     end
     object txtCelular: TDBEdit
       Left = 19
-      Top = 94
+      Top = 153
       Width = 226
       Height = 21
       BorderStyle = bsNone
@@ -160,13 +173,12 @@ object Form1: TForm1
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
-      MaxLength = 15
       ParentFont = False
       TabOrder = 2
     end
     object DBMemo1: TDBMemo
       Left = 19
-      Top = 198
+      Top = 262
       Width = 397
       Height = 134
       BorderStyle = bsNone
@@ -174,6 +186,23 @@ object Form1: TForm1
       DataField = 'observacoes'
       DataSource = DM.dsContatos
       TabOrder = 3
+    end
+    object DBEdit1: TDBEdit
+      Left = 19
+      Top = 95
+      Width = 397
+      Height = 21
+      BorderStyle = bsNone
+      Color = 4210752
+      DataField = 'email'
+      DataSource = DM.dsContatos
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clHighlightText
+      Font.Height = -11
+      Font.Name = 'Tahoma'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
     end
   end
   object DBNavigator1: TDBNavigator
@@ -188,7 +217,7 @@ object Form1: TForm1
     Left = 488
     Top = 119
     Width = 441
-    Height = 426
+    Height = 466
     Color = 1513239
     ParentBackground = False
     TabOrder = 2
@@ -225,7 +254,7 @@ object Form1: TForm1
       Left = 16
       Top = 75
       Width = 409
-      Height = 334
+      Height = 374
       DataSource = DM.dsContatos
       DrawingStyle = gdsGradient
       Font.Charset = DEFAULT_CHARSET
@@ -233,6 +262,7 @@ object Form1: TForm1
       Font.Height = -11
       Font.Name = 'Tahoma'
       Font.Style = []
+      Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgTitleClick, dgTitleHotTrack]
       ParentFont = False
       TabOrder = 1
       TitleFont.Charset = DEFAULT_CHARSET
